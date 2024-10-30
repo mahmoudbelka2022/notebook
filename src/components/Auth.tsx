@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { LogIn, UserPlus, KeyRound, Mail, User as UserIcon } from 'lucide-react';
 import { useAuthStore } from '../store/auth';
 
+
 const authSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
@@ -134,6 +135,19 @@ export function Auth() {
             {isLogin ? 'Sign up' : 'Sign in'}
           </button>
         </p>
+        <footer style={{
+     display: 'flex',
+     justifyContent: 'center',
+     alignItems: 'center',
+     height: '100px',   // Adjust height as needed
+     // backgroundColor: '#333', // Optional: add a background color to see the centering effect
+     color: 'white',
+     fontSize: '0.875rem',
+     textAlign: 'center' }}>Copyright By Kamal Belkati
+        © {new Date().getFullYear()} DB Team Nour.AMKG, VA 22192 USA. All rights reserved.
+
+    </footer>
+
       </div>
     </div>
   );
