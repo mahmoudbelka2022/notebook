@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect ,useState } from 'react';
 import { LogOut, Plus, BookOpen } from 'lucide-react';
 import { useAuthStore } from '../store/auth';
 import { NoteList } from './NoteList';
@@ -21,6 +21,17 @@ export function Dashboard() {
     setIsEditorOpen(false);
     setEditingNote(undefined);
   };
+
+
+    
+
+    const saveNote = (content: string) => {
+        const newNote = { id: Date.now().toString(), content, timestamp: new Date().toLocaleString() };
+        const updatedNotes = [...notes, newNote];
+        setNotes(updatedNotes);
+        localStorage.setItem('userNotes', JSON.stringify(updatedNotes));
+    };
+
 
   return (
     <div className="min-h-screen bg-gray-50">
