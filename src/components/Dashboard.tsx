@@ -5,6 +5,11 @@ import { NoteList } from './NoteList';
 import { NoteEditor } from './NoteEditor';
 import { Clock } from './Clock';
 import { Note } from '../types';
+import noteImage from '../images/note2.png'; // adjust path as needed
+
+
+
+
 
 export function Dashboard() {
   const [isEditorOpen, setIsEditorOpen] = useState(false);
@@ -23,7 +28,8 @@ export function Dashboard() {
   };
 
 
-    
+
+
 
     const saveNote = (content: string) => {
         const newNote = { id: Date.now().toString(), content, timestamp: new Date().toLocaleString() };
@@ -34,6 +40,10 @@ export function Dashboard() {
 
 
   return (
+    <div className="dashboard-animated-background">
+    <div className="note-image-container">
+        <img src={noteImage} alt="Note" className="note-image" />
+
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,5 +89,8 @@ export function Dashboard() {
         )}
       </main>
     </div>
+  </div>
+  </div>
   );
+
 }

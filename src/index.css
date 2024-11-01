@@ -21,3 +21,48 @@
     @apply w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent;
   }
 }
+.dashboard-animated-background {
+
+  background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+  background-size: 400% 400%;
+  animation: cornerGradientAnimation 17s ease infinite;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes cornerGradientAnimation {
+  0% { background-position: 0% 0%; }   /* Top-left corner */
+  25% { background-position: 100% 0%; } /* Top-right corner */
+  50% { background-position: 100% 100%; } /* Bottom-right corner */
+  75% { background-position: 0% 100%; }  /* Bottom-left corner */
+  100% { background-position: 0% 0%; }   /* Back to Top-left */
+}
+
+/* .dashboard-content {
+  background: rgba(189,183,107, 0.8);
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  border-radius: 30px;
+  padding: 20px;
+
+} */
+
+.note-image-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position */
+  z-index: 1; /* Behind other content */
+}
+
+.note-image {
+  width: 900px; /* Make the image larger */
+  height: 300px; /* Maintain aspect ratio */
+  opacity: 0.4; /* Adjust opacity to make it semi-transparent */
+  pointer-events: none; /* Ensure mouse events pass through */
+}
