@@ -28,15 +28,31 @@ export function Dashboard() {
   };
 
 
+  const saveNote = () => {
+          const newNote: Note = {
+              id: new Date().toISOString(), // Unique ID based on timestamp
+              content: newNoteContent,
+              timestamp: new Date().toISOString(),
+          };
+
+          const existingNotes = JSON.parse(localStorage.getItem('notes') || '[]');
+          existingNotes.push(newNote);
+          localStorage.setItem('notes', JSON.stringify(existingNotes));
+
+          // Update state
+          setNotes(existingNotes);
+          setNewNoteContent(''); // Clear input field
+      };
 
 
 
-    const saveNote = (content: string) => {
-        const newNote = { id: Date.now().toString(), content, timestamp: new Date().toLocaleString() };
-        const updatedNotes = [...notes, newNote];
-        setNotes(updatedNotes);
-        localStorage.setItem('userNotes', JSON.stringify(updatedNotes));
-    };
+
+    // const saveNote = (content: string) => {
+    //     const newNote = { id: Date.now().toString(), content, timestamp: new Date().toLocaleString() };
+    //     const updatedNotes = [...notes, newNote];
+    //     setNotes(updatedNotes);
+    //     localStorage.setItem('userNotes', JSON.stringify(updatedNotes));
+    // };
 
 
   return (
