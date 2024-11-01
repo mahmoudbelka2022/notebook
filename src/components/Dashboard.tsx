@@ -43,7 +43,11 @@ export function Dashboard() {
           setNotes(existingNotes);
           setNewNoteContent(''); // Clear input field
       };
-
+      const fetchUserNotes = () => {
+       const storedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
+       setNotes(storedNotes);
+   };
+   
 
 
 
@@ -56,7 +60,7 @@ export function Dashboard() {
 
 
   return (
-    <div className="dashboard-animated-background">
+    //<div className="dashboard-animated-background">
     <div className="note-image-container">
         <img src={noteImage} alt="Note" className="note-image" />
 
@@ -106,7 +110,7 @@ export function Dashboard() {
       </main>
     </div>
   </div>
-  </div>
+  //</div>
   );
 
 }
