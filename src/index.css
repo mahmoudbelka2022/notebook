@@ -39,7 +39,7 @@
   25% { background-position: 100% 0%; }
   50% { background-position: 100% 100%; }
   75% { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }   
+  100% { background-position: 0% 0%; }
 } */
 
 /* .dashboard-content {
@@ -52,17 +52,17 @@
 
 } */
 
-.note-image-container {
+/* .note-image-container {
   position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust position */
-  z-index: 1; /* Behind other content */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .note-image {
-  width: 900px; /* Make the image larger */
-  height: 300px; /* Maintain aspect ratio */
-  opacity: 0.4; /* Adjust opacity to make it semi-transparent */
-  pointer-events: none; /* Ensure mouse events pass through */
-}
+  width: 300px;
+  height: 300px;
+  opacity: 0.4;
+  pointer-events: none;
+} */

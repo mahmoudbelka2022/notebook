@@ -47,7 +47,7 @@ export function Dashboard() {
        const storedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
        setNotes(storedNotes);
    };
-   
+
 
 
 
@@ -61,8 +61,8 @@ export function Dashboard() {
 
   return (
     //<div className="dashboard-animated-background">
-    <div className="note-image-container">
-        <img src={noteImage} alt="Note" className="note-image" />
+    // <div className="note-image-container">
+    //     <img src={noteImage} alt="Note" className="note-image" />
 
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
@@ -109,7 +109,7 @@ export function Dashboard() {
         )}
       </main>
     </div>
-  </div>
+  //</div>
   //</div>
   );
 
